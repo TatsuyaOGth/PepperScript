@@ -4,12 +4,12 @@ from naoqi import ALProxy
 
 args = sys.argv
 IP = args[1]
-PORT = 9559
+PORT = int(args[2])
 
-moveToX = float(args[2])
-moveToY = float(args[3])
-moveToR = float(args[4])
-delay = float(args[5])
+moveToX = float(args[3])
+moveToY = float(args[4])
+moveToR = float(args[5])
+delay = float(args[6])
 
 
 # motion = ALProxy('ALMotion',IP,PORT)

@@ -1,0 +1,11 @@
+#N canvas 171 128 682 533 10;
+#X obj 136 196 shell;
+#X obj 164 221 print EXIT;
+#X obj 136 249 print STDOUT:::::;
+#X msg 67 133 /bin/sh;
+#X msg 135 131 /Users/tatsuyaogusu/Documents/Program/Python/PepperScripts/LittlePerformance/command/33_insane_part.sh
+;
+#X connect 0 0 2 0;
+#X connect 0 1 1 0;
+#X connect 3 0 0 0;
+#X connect 4 0 0 0;

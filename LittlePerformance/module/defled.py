@@ -6,10 +6,8 @@ import time
 
 args = sys.argv
 IP = args[1]
-
-COLOR = args[2]
-
-PORT = 9559
+PORT = int(args[2])
+COLOR = args[3]
 
 try:
 	leds = ALProxy("ALLeds", IP, PORT)

@@ -6,7 +6,7 @@ from naoqi import ALProxy
 
 args = sys.argv
 IP = args[1]
-PORT = 9559
+PORT = int(args[2])
 
 
 names = list()
@@ -83,8 +83,8 @@ keys.append([[1.8024, [3, -0.333333, 0], [3, 0, 0]]])
 
 try:
   # uncomment the following line and modify the IP if you use this script outside Choregraphe.
-  motion = ALProxy("ALMotion", IP, 9559)
+  motion = ALProxy("ALMotion", IP, PORT)
   # motion = ALProxy("ALMotion")
   motion.angleInterpolationBezier(names, times, keys)
 except BaseException, err:
-  print err
+  quit()

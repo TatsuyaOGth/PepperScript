@@ -6,12 +6,9 @@ from naoqi import ALProxy
 
 argvs = sys.argv 
 ip = argvs[1]
-port = 9559
-
-
-
-speed = float(argvs[2])
-REPEAT = int(argvs[3])
+port = int(argvs[2])
+speed = float(argvs[3])
+REPEAT = int(argvs[4])
 
 try:
 	motion_proxy = ALProxy('ALMotion',ip,port)

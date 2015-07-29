@@ -7,7 +7,7 @@ import sys
 
 argvs = sys.argv 
 ip = argvs[1]
-port = 9559
+port = int(argvs[2])
 
 try:
 	motion_proxy = ALProxy('ALMotion',ip,port)
@@ -33,8 +33,3 @@ onLed('LeftFaceLeds', 1.0, 1.0, 1.0, 0.0)
 onLed('ChestLeds', 1.0, 1.0, 1.0, 0.0)
 onLed('RightEarLeds', 0, 0, 0, 0.0)
 onLed('LeftEarLeds', 0, 0, 0, 0.0)
-
-
-
-
-

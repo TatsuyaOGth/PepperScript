@@ -4,7 +4,7 @@ from naoqi import ALProxy
 
 args = sys.argv
 IP = args[1]
-PORT = 9559
+PORT = int(args[2])
 
 motion = ALProxy('ALMotion',IP,PORT)
 motion.positionErrorThresholdPos = 0.0

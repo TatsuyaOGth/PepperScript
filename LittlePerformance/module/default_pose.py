@@ -6,16 +6,19 @@ from naoqi import ALProxy
 
 argvs = sys.argv 
 ip = argvs[1]
-# ip = '192.168.100.100'
-port = 9559
+port = int(argvs[2])
+speed = float(argvs[3])
 
-motion_proxy = ALProxy('ALMotion',ip,port)
+try:
+  motion_proxy = ALProxy('ALMotion',ip,port)
+except:
+  quit()
 
 part = 'Body'
 body_names = motion_proxy.getBodyNames(part)
 
-speed = float(argvs[2])
 
+motion_proxy.moveInit()
 motion_proxy.setAngles('HeadYaw',         0.0, speed)
 motion_proxy.setAngles('HeadPitch',       0.0, speed)
 motion_proxy.setAngles('LShoulderPitch',  1.4, speed)

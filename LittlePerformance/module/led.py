@@ -1,19 +1,18 @@
 from naoqi import ALProxy
 import sys
-import math
 import random
 import time
 
 args = sys.argv
 IP = args[1]
-PORT = 9559
+PORT = int(args[2])
+repeat = 500;
+
 
 try:
 	leds = ALProxy("ALLeds", IP, PORT)
 except Exception as e:
 	exit()
-
-repeat = 10;
 
 
 def onLed(group, r, g, b, duration):
@@ -43,14 +42,4 @@ for i in range(repeat):
 	onLed('LeftEarLeds', 0, 0, b, 0.0)
 
 	time.sleep(0.1)
-
-	# onLed('RightFaceLeds', 0, 0, 0, 0.0)
-	# onLed('LeftFaceLeds', 0, 0, 0, 0.0)
-	# onLed('ChestLeds', 0, 0, 0, 0.0)
-	# onLed('RightEarLeds', 0, 0, 0, 0.0)
-	# onLed('LeftEarLeds', 0, 0, 0, 0.0)
-	# time.sleep(0.05)
-	
-# onLed('RightFaceLeds', 1, 1, 1, 0.0)
-# onLed('RightFaceLeds', 1, 1, 1, 0.0)
 

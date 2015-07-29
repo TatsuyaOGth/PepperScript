@@ -8,9 +8,8 @@ REPEAT = 50
 
 argvs = sys.argv 
 ip = argvs[1]
-port = 9559
-
-speed = float(argvs[2])
+port = int(argvs[2])
+speed = float(argvs[3])
 
 try:
 	motion_proxy = ALProxy('ALMotion',ip,port)

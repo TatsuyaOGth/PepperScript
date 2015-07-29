@@ -1,15 +1,18 @@
 #!/bin/sh
 
 source common.sh
+echo "kill_all"
 
 
 for ((i = 0; i < ${SIZE}; ++i))
 do
+  CMD=${COMMAND}\ ${SRC_DIR}kill_all.py\ ${HOSTS[$i]}\ ${PORTS[$i]}
   if test ${i} -eq ${LAST}
   then
-    ${COMMAND} ${SRC_DIR}defled.py ${HOSTS[$i]} '1,1,0'
+    ${CMD}
   else
-    ${COMMAND} ${SRC_DIR}defled.py ${HOSTS[$i]} '0,1,1' &
+    ${CMD} &
   fi
 done
 
+exit 0	
